@@ -1,0 +1,52 @@
+<section class="detalle-page">
+  <div class="imagen-principal">
+  <button class="flecha flecha-izq" (click)="imagenAnterior()">‹</button>
+
+  <img [src]="imagenPrincipal" [alt]="producto.nombre">
+
+  <button class="flecha flecha-der" (click)="imagenSiguiente()">›</button>
+</div>
+
+  <div class="info-detalle">
+    <div class="top-detalle">
+      <h1>{{ producto.nombre }} ♡</h1>
+      <span class="cart-detalle">🛒<b>{{ carrito }}</b></span>
+    </div>
+
+    <p><b>Productor:</b> {{ producto.productor }}</p>
+    <p>📍 {{ producto.ubicacion }}</p>
+    <p>☕ <b>Tipo:</b> {{ producto.tipo }}</p>
+    <p>🔥 <b>Tostado:</b> {{ producto.tostado }}</p>
+    <p>⚖️ <b>Peso:</b> {{ producto.peso }}</p>
+    <p>🏷️ <b>Variedad:</b> {{ producto.variedad }}</p>
+
+    <h3>Descripción:</h3>
+    <p>{{ producto.descripcion }}</p>
+
+    <h2>{{ producto.precio }}</h2>
+
+    <div class="cantidad">
+      <button (click)="disminuir()">-</button>
+      <span>{{ cantidad }}</span>
+      <button (click)="aumentar()">+</button>
+    </div>
+
+    <button class="agregar" (click)="agregarAlCarrito()">
+      Agregar al carrito 🛒
+    </button>
+
+    <a routerLink="/cafes" class="volver">← Volver al catálogo</a>
+  </div>
+</section>
+
+<section class="galeria">
+  <h3>Galería del café</h3>
+
+  <div class="miniaturas">
+    <img 
+      *ngFor="let img of producto.galeria"
+      [src]="img"
+      (click)="cambiarImagen(img)"
+      [class.activa]="img === imagenPrincipal">
+  </div>
+</section>
