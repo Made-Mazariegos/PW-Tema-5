@@ -1,0 +1,38 @@
+<section class="admin-detalle">
+  <h1>☕ Productos publicados</h1>
+
+  <table>
+    <tr>
+      <th>Producto</th>
+      <th>Productor</th>
+      <th>Precio</th>
+      <th>Estado</th>
+      <th>Acción</th>
+    </tr>
+
+    <tr>
+      <td>Café Gran Reserva</td>
+      <td>Don Luis</td>
+      <td>$120</td>
+      <td>Publicado</td>
+      <td>
+        <button (click)="verProducto()">Ver</button>
+        <button (click)="eliminarProducto()">Eliminar</button>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Café Tradición Campesina</td>
+      <td>Don Pedro</td>
+      <td>$105</td>
+      <td>Revisión</td>
+      <td>
+        <button (click)="aprobarProducto()">Aprobar</button>
+      </td>
+    </tr>
+  </table>
+
+  <button routerLink="/admin" class="btn-volver">
+    ← Volver al panel
+  </button>
+</section>

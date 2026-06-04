@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { ProductosService } from '../../services/productos.service';
 
 @Component({
   selector: 'app-detalle-producto',
@@ -73,12 +74,39 @@ export class DetalleProducto {
   };
 
   constructor() {
-    const ruta = window.location.pathname;
-    const id = ruta.split('/').pop() || 'gran-reserva';
+  this.cargarProducto();
+}
+async cargarProducto() {
+  const ruta = window.location.pathname;
+  const id = ruta.split('/').pop() || 'gran-reserva';
 
+  if (this.productos[id]) {
     this.producto = this.productos[id];
     this.imagenPrincipal = this.producto.imagen;
+    return;
   }
+
+  const productosService = new ProductosService();
+  const productoBD = await productosService.obtenerProductoPorId(id);
+
+  if (productoBD) {
+    this.producto = {
+      nombre: productoBD.nombre,
+      productor: productoBD.vendedor,
+      ubicacion: 'Bella Vista, Chiapas',
+      tipo: productoBD.categoria?.split('|')[0]?.trim() || 'No especificado',
+      tostado: productoBD.categoria?.split('|')[1]?.trim() || 'No especificado',
+      peso: '500 g',
+      variedad: 'Café artesanal',
+      precio: `$${productoBD.precio}`,
+      descripcion: productoBD.descripcion,
+      imagen: productoBD.imagen,
+      galeria: [productoBD.imagen]
+    };
+
+    this.imagenPrincipal = this.producto.imagen;
+  }
+}
 
   cambiarImagen(img: string) {
     this.imagenPrincipal = img;
@@ -109,7 +137,24 @@ disminuir() {
 }
 
 agregarAlCarrito() {
+  const carritoActual = JSON.parse(localStorage.getItem('carrito') || '[]');
+
+  const productoExistente = carritoActual.find(
+    (p: any) => p.nombre === this.producto.nombre
+  );
+
+  if (productoExistente) {
+    productoExistente.cantidad += this.cantidad;
+  } else {
+    carritoActual.push({
+      nombre: this.producto.nombre,
+      precio: Number(this.producto.precio.replace('$', '')),
+      cantidad: this.cantidad,
+      imagen: this.producto.imagen
+    });
+  }
+
+  localStorage.setItem('carrito', JSON.stringify(carritoActual));
   this.carrito += this.cantidad;
-  this.cantidad++;
 }
 }

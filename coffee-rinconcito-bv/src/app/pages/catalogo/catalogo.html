@@ -11,64 +11,98 @@
     <nav>
       <a routerLink="/inicio">Inicio</a>
       <a class="active">Cafés</a>
-      <a>Vender mi café</a>
-      <a>Nosotros</a>
-      <a>Contacto</a>
+      <a routerLink="/vender-cafe">Vender mi café</a>
+      <a routerLink="/contacto">Nosotros</a>
+<a routerLink="/contacto">Contacto</a>
     </nav>
 
     <div class="icons">
       <span>♡</span>
-      <span class="cart">🛒<b>2</b></span>
+      <span class="cart" routerLink="/carrito">🛒<b>2</b></span>
     </div>
   </header>
 
   <h1>☕ Cafés disponibles ☕</h1>
   <p class="subtitulo">Cafés molidos artesanales de agricultores de Bella Vista</p>
+  <p style="text-align:center; color:red; font-weight:bold;">
+     Productos desde Supabase: {{ productos.length }}
+  </p>
 
-  <div class="productos">
-    <div class="producto">
-      <img src="/img/gran-reserva.png">
-      <span class="heart">♡</span>
-      <h3>Café Gran Reserva</h3>
-      <p><b>Productor:</b> Don Luis</p>
-      <p>📍 Bella Vista, Chiapas</p>
-      <p>☕ Molido | Tostado medio</p>
-      <h2>$120.00</h2>
-      <button routerLink="/detalle/gran-reserva">Comprar</button>
-    </div>
+   <div class="productos"></div>
+   <div class="productos">
 
-    <div class="producto">
-      <img src="/img/organico.png">
-      <span class="heart">♡</span>
-      <h3>Café Orgánico BV</h3>
-      <p><b>Productor:</b> Doña María</p>
-      <p>📍 Bella Vista, Chiapas</p>
-      <p>☕ Molido | Tostado oscuro</p>
-      <h2>$110.00</h2>
-      <button routerLink="/detalle/organico-bv">Comprar</button>
-    </div>
-
-    <div class="producto">
-      <img src="/img/sierra-verde.png">
-      <span class="heart">♡</span>
-      <h3>Café Sierra Verde</h3>
-      <p><b>Productor:</b> Don José</p>
-      <p>📍 Bella Vista, Chiapas</p>
-      <p>☕ Molido | Tostado claro</p>
-      <h2>$115.00</h2>
-      <button routerLink="/detalle/sierra-verde">Comprar</button>
-    </div>
-
-    <div class="producto">
-      <img src="/img/tradicion.png">
-      <span class="heart">♡</span>
-      <h3>Café Tradición Campesina</h3>
-      <p><b>Productor:</b> Don Pedro</p>
-      <p>📍 Bella Vista, Chiapas</p>
-      <p>☕ Molido | Tostado medio</p>
-      <h2>$105.00</h2>
-      <button routerLink="/detalle/tradicion-campesina">Comprar</button>
-    </div>
+  <div class="producto">
+    <img src="/img/gran-reserva.png">
+    <span class="heart">♡</span>
+    <h3>Café Gran Reserva</h3>
+    <p><b>Productor:</b> Don Luis</p>
+    <p>📍 Bella Vista, Chiapas</p>
+    <p>☕ Molido | Tostado medio</p>
+    <h2>$120.00</h2>
+    <button routerLink="/detalle/gran-reserva">Comprar</button>
   </div>
+
+  <div class="producto">
+    <img src="/img/organico.png">
+    <span class="heart">♡</span>
+    <h3>Café Orgánico BV</h3>
+    <p><b>Productor:</b> Doña María</p>
+    <p>📍 Bella Vista, Chiapas</p>
+    <p>☕ Molido | Tostado oscuro</p>
+    <h2>$110.00</h2>
+    <button routerLink="/detalle/organico-bv">Comprar</button>
+  </div>
+
+  <div class="producto">
+    <img src="/img/sierra-verde.png">
+    <span class="heart">♡</span>
+    <h3>Café Sierra Verde</h3>
+    <p><b>Productor:</b> Don José</p>
+    <p>📍 Bella Vista, Chiapas</p>
+    <p>☕ Molido | Tostado claro</p>
+    <h2>$115.00</h2>
+    <button routerLink="/detalle/sierra-verde">Comprar</button>
+  </div>
+
+  <div class="producto">
+    <img src="/img/tradicion.png">
+    <span class="heart">♡</span>
+    <h3>Café Tradición Campesina</h3>
+    <p><b>Productor:</b> Don Pedro</p>
+    <p>📍 Bella Vista, Chiapas</p>
+    <p>☕ Molido | Tostado medio</p>
+    <h2>$105.00</h2>
+    <button routerLink="/detalle/tradicion-campesina">Comprar</button>
+  </div>
+
+  <div class="producto" *ngFor="let producto of productos">
+
+  <img [src]="producto.imagen" [alt]="producto.nombre">
+
+  <span class="heart">♡</span>
+
+  <h3>{{ producto.nombre }}</h3>
+
+  <p><b>Productor:</b> {{ producto.vendedor }}</p>
+
+  <p>📍 Bella Vista, Chiapas</p>
+
+  <p>☕ {{ producto.categoria }}</p>
+
+  <h2>${{ producto.precio }}.00</h2>
+
+  <button [routerLink]="['/detalle', producto.identificador]">
+    Comprar
+  </button>
+
+</div>
+
+</div>
 </section>
+
+
+
+
+
+
 

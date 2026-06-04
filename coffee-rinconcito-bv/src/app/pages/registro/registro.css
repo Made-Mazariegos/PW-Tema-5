@@ -1,0 +1,87 @@
+.login-page {
+  width: 520px;
+  margin: 35px auto;
+  display: flex;
+  background: #fff8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0,0,0,0.10);
+}
+
+.login-img {
+  width: 35%;
+  background: url('/img/login-cafe.png') center/cover;
+}
+
+.login-card {
+  width: 65%;
+  padding: 35px;
+  text-align: center;
+}
+
+.login-card h1 {
+  color: #2b160d;
+  margin-bottom: 8px;
+}
+
+.login-card p {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 13px;
+  margin: 9px 0;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.forgot {
+  display: block;
+  margin: 10px;
+  color: #2f5d22;
+  font-size: 13px;
+}
+
+.login-card button {
+  width: 100%;
+  padding: 13px;
+  border-radius: 8px;
+  border: none;
+  background: #2f5d22;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.linea {
+  margin: 20px 0;
+  font-size: 13px;
+  color: #777;
+}
+
+.social {
+  display: flex;
+  gap: 12px;
+}
+
+.social button {
+  background: white;
+  color: #2b160d;
+  border: 1px solid #ddd;
+}
+.btn-volver {
+  margin-top: 12px;
+  background: transparent !important;
+  color: #2f5d22 !important;
+  border: 1px solid #2f5d22 !important;
+}
+.mensaje {
+  background: #e8f5e1;
+  color: #2f5d22;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 12px;
+  font-size: 14px;
+}

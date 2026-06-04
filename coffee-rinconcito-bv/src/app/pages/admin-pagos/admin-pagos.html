@@ -1,0 +1,38 @@
+<section class="admin-detalle">
+  <h1>💰 Pagos de vendedores</h1>
+
+  <table>
+    <tr>
+      <th>Vendedor</th>
+      <th>Concepto</th>
+      <th>Monto</th>
+      <th>Estado</th>
+      <th>Acción</th>
+    </tr>
+
+    <tr>
+      <td>Don José</td>
+      <td>Pago para vender café</td>
+      <td>$100</td>
+      <td>Pendiente</td>
+      <td>
+        <button (click)="aprobarPago()">Aprobar</button>
+        <button (click)="rechazarPago()">Rechazar</button>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Doña María</td>
+      <td>Pago para vender café</td>
+      <td>$100</td>
+      <td>Aprobado</td>
+      <td>
+        <button (click)="verPago()">Ver</button>
+      </td>
+    </tr>
+  </table>
+
+  <button routerLink="/admin" class="btn-volver">
+    ← Volver al panel
+  </button>
+</section>

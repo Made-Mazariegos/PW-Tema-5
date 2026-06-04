@@ -1,0 +1,99 @@
+.vender-page {
+  width: 640px;
+  margin: 35px auto;
+  display: flex;
+  background: #fff8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0,0,0,0.10);
+}
+
+.vender-img {
+  width: 32%;
+  background: url('/img/productor.png') center/cover;
+}
+
+.vender-form {
+  width: 68%;
+  padding: 28px;
+  text-align: center;
+}
+
+.vender-form h1 {
+  color: #2b160d;
+  margin-bottom: 6px;
+}
+
+.vender-form p {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.vender-form input,
+.vender-form select,
+.vender-form textarea {
+  width: 100%;
+  padding: 11px;
+  margin: 7px 0;
+  border-radius: 7px;
+  border: 1px solid #d8d0c8;
+}
+
+.fila {
+  display: flex;
+  gap: 10px;
+}
+
+textarea {
+  height: 70px;
+  resize: none;
+}
+
+.upload-box {
+  border: 2px dashed #9b8b7d;
+  border-radius: 12px;
+  padding: 22px;
+  margin: 10px 0;
+  background: #fffdf8;
+}
+
+.vender-form button {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  background: #2f5d22;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.preview-fotos{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:15px;
+}
+
+.preview-fotos img{
+  width:100px;
+  height:100px;
+  object-fit:cover;
+  border-radius:10px;
+  border:2px solid #ddd;
+}
+.btn-volver{
+  width: auto !important;
+  margin-top: 12px;
+  background: transparent !important;
+  border: 1px solid #ddd !important;
+  border-radius: 20px;
+  padding: 8px 16px !important;
+  font-size: 13px;
+  color: #666 !important;
+  cursor: pointer;
+}
+
+.btn-volver:hover{
+  background: #f5f5f5 !important;
+  color: #2f5d22 !important;
+}

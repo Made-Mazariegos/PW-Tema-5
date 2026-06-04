@@ -1,0 +1,51 @@
+<section class="vender-page">
+  <div class="vender-img"></div>
+
+  <div class="vender-form">
+    <h1>🍃 Vende tu café 🍃</h1>
+    <p>Comparte tu café con más personas</p>
+
+    <input type="text" placeholder="Nombre del productor" [(ngModel)]="productor">
+    <input type="text" placeholder="Nombre de tu café" [(ngModel)]="nombreCafe">
+
+    <div class="fila">
+
+      <select [(ngModel)]="tipo">
+        <option>Molido</option>
+        <option>En grano</option>
+      </select>
+
+    <select [(ngModel)]="tostado">
+        <option>Medio</option>
+        <option>Claro</option>
+        <option>Oscuro</option>
+      </select>
+
+    </div>
+
+    <input type="text" placeholder="Precio (por 500 g)" [(ngModel)]="precio">
+
+    <textarea placeholder="Descripción de tu café" [(ngModel)]="descripcion"></textarea>
+
+    <div class="upload-box">
+  <h3>☁️ Subir fotos</h3>
+  <p>Sube fotos de tu café, empaque, granos, cosecha, etc.</p>
+  <small>Máx. 5 imágenes</small>
+
+  <input 
+    type="file" 
+    accept="image/*" 
+    multiple 
+    (change)="seleccionarFotos($event)">
+</div>
+
+<div class="preview-fotos">
+  <img *ngFor="let foto of fotosPreview" [src]="foto">
+</div>
+
+    <button (click)="publicarCafe()">Publicar mi café</button>
+    <button routerLink="/inicio" class="btn-volver">
+  ← Volver al inicio
+</button>
+  </div>
+</section>

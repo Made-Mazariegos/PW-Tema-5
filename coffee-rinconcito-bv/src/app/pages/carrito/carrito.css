@@ -1,0 +1,157 @@
+.carrito-page {
+  width: 70%;
+  margin: 35px auto;
+  background: #fff8f0;
+  padding: 35px;
+  border-radius: 18px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.08);
+  color: #2b160d;
+}
+
+.carrito-page h1 {
+  font-size: 34px;
+  margin-bottom: 25px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+th {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+td {
+  padding: 18px 12px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+.producto-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+}
+
+.producto-info img {
+  width: 65px;
+  height: 65px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+td button {
+  border: 1px solid #ccc;
+  background: #fff8f0;
+  border-radius: 6px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.resumen {
+  width: 35%;
+  margin-left: auto;
+  margin-top: 25px;
+  font-family: Arial, sans-serif;
+}
+
+.resumen p,
+.resumen h2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.resumen h2 span {
+  color: #2f5d22;
+}
+
+.acciones-carrito {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 35px;
+}
+
+.acciones-carrito button {
+  padding: 14px 35px;
+  border-radius: 9px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-secundario {
+  background: #fff8f0;
+  border: 1px solid #2f5d22;
+}
+
+.btn-principal {
+  background: #2f5d22;
+  color: white;
+  border: none;
+}
+
+.btn-rastreo {
+  background: #9a662f;
+  color: white;
+  border: none;
+}
+.modal-fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-pago {
+  width: 480px;
+  background: #fff8f0;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+}
+
+.modal-pago h2 {
+  text-align: center;
+  color: #2b160d;
+}
+
+.modal-pago input,
+.modal-pago select {
+  padding: 12px;
+  border: 1px solid #d4c7bc;
+  border-radius: 8px;
+}
+
+.cerrar {
+  position: absolute;
+  right: 15px;
+  top: 12px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.btn-guardar {
+  background: #2f5d22;
+  color: white;
+  border: none;
+  padding: 13px;
+  border-radius: 9px;
+  font-weight: bold;
+  cursor: pointer;
+}

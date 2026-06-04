@@ -1,0 +1,114 @@
+<section class="carrito-page">
+  <h1>Mi carrito 🛍</h1>
+  <button routerLink="/inicio" class="btn-inicio">← Regresar a inicio</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+        <th>Total</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let producto of productos">
+        <td class="producto-info">
+          <img [src]="producto.imagen">
+          <div>
+            <b>{{ producto.nombre }}</b>
+            <p>(500 g)</p>
+          </div>
+        </td>
+
+        <td>
+        <button type="button" (click)="disminuir(producto)">−</button>
+        <span>{{ producto.cantidad }}</span>
+        <button type="button" (click)="aumentar(producto)">+</button>
+        </td>
+
+        <td>${{ producto.precio }}.00</td>
+        <td>${{ producto.precio * producto.cantidad }}.00</td>
+        <td><button (click)="eliminar(producto)">🗑</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="resumen">
+    <p>Subtotal <span>${{ subtotal }}.00</span></p>
+    <p>Envío <span>$30.00</span></p>
+    <h2>Total <span>${{ total }}.00</span></h2>
+  </div>
+
+  <div class="acciones-carrito">
+    <button routerLink="/cafes" class="btn-secundario">Seguir comprando</button>
+    <button class="btn-pago" (click)="abrirPago()">Datos de envío y pago 💳</button>
+    <button class="btn-principal" (click)="finalizarCompra()">Finalizar compra 🛍</button>
+    <button class="btn-rastreo" (click)="rastrearPedido()">Rastrear pedido 📦</button>
+  </div>
+</section>
+<div class="modal-fondo" *ngIf="modalPago">
+  <div class="modal-pago">
+
+    <button class="cerrar" (click)="cerrarPago()">✖</button>
+
+    <h2>Datos de envío y pago 💳</h2>
+
+    <input type="text" placeholder="Nombre completo">
+    <input type="text" placeholder="Dirección de entrega">
+    <select [(ngModel)]="zonaEntrega">
+    <option value="">Selecciona zona de entrega</option>
+    <option value="chiapas">Dentro de Chiapas</option>
+    <option value="mexico">Otro estado de México</option>
+</select>
+    <input type="text" placeholder="Teléfono">
+    <select [(ngModel)]="zonaEntrega">
+    <option value="">Selecciona una zona</option>
+    <option value="chiapas">Chiapas</option>
+    <option value="mexico">Resto de México</option>
+</select>
+
+    <select>
+      <option>Tarjeta bancaria</option>
+      <option>Transferencia</option>
+      <option>Pago contra entrega</option>
+    </select>
+
+    <input type="text" placeholder="Número de tarjeta">
+    <input type="text" placeholder="Fecha de vencimiento">
+    <input type="text" placeholder="CVV">
+
+    <button class="btn-guardar" (click)="cerrarPago()">Guardar datos</button>
+
+  </div>
+</div>
+<div class="modal-fondo" *ngIf="compraExitosa">
+  <div class="modal-pago">
+    <h2>✅ Compra realizada</h2>
+
+    <p>Tu pedido fue confirmado correctamente.</p>
+    <p><b>Paquetería:</b> Express</p>
+    <p><b>Entrega estimada:</b> {{ tiempoEntrega }}</p>
+
+    <button class="btn-guardar" (click)="compraExitosa = false">
+      Aceptar
+    </button>
+  </div>
+</div>
+
+<div class="modal-fondo" *ngIf="mostrarRastreo">
+  <div class="modal-pago">
+    <h2>📦 Rastreo del pedido</h2>
+
+    <p>✅ Pedido confirmado</p>
+    <p>✅ Producto empaquetado</p>
+    <p>🚚 Enviado por Express</p>
+    <p>📍 Entrega estimada: {{ tiempoEntrega }}</p>
+
+    <button class="btn-guardar" (click)="mostrarRastreo = false">
+      Cerrar
+    </button>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<section class="admin-detalle">
+  <h1>👥 Usuarios registrados</h1>
+
+  <table>
+    <tr>
+      <th>Nombre</th>
+      <th>Rol</th>
+      <th>Estado</th>
+      <th>Acción</th>
+    </tr>
+
+    <tr>
+      <td>María López</td>
+      <td>Cliente</td>
+      <td>Activo</td>
+      <td>
+      <button (click)="verUsuario()">Ver</button>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Don José</td>
+      <td>Vendedor</td>
+      <td>Pendiente</td>
+      <td>
+      <button (click)="aprobarUsuario()">Aprobar</button>
+      </td>
+    </tr>
+  </table>
+
+  <button routerLink="/admin" class="btn-volver">← Volver al panel</button>
+</section>

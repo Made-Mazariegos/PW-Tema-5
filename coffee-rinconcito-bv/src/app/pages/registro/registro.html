@@ -1,0 +1,29 @@
+<section class="login-page">
+  <div class="login-img"></div>
+
+  <div class="login-card">
+    <h1>Crear cuenta</h1>
+    <p>Regístrate para comprar o vender café</p>
+
+    <input type="text" placeholder="Nombre completo">
+    <input type="email" placeholder="Correo electrónico">
+    <input type="text" placeholder="Teléfono">
+    <input type="password" placeholder="Contraseña">
+    <input type="password" placeholder="Confirmar contraseña">
+
+    <button (click)="registrar()">Registrarme</button>
+    <p class="mensaje" *ngIf="mensaje">
+  {{ mensaje }}
+</p>
+
+    <p>
+  ¿Ya tienes cuenta?
+  <a routerLink="/login">Inicia sesión</a>
+</p>
+
+<button routerLink="/inicio" class="btn-volver">
+  ← Volver al inicio
+</button>
+
+</div>
+</section>
