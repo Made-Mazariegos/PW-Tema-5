@@ -52,3 +52,4 @@ export class Catalogo implements OnInit {
     this.cdr.detectChanges();
   }
 }
+

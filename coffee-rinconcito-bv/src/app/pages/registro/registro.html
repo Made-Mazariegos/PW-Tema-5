@@ -5,25 +5,44 @@
     <h1>Crear cuenta</h1>
     <p>Regístrate para comprar o vender café</p>
 
-    <input type="text" placeholder="Nombre completo">
-    <input type="email" placeholder="Correo electrónico">
-    <input type="text" placeholder="Teléfono">
-    <input type="password" placeholder="Contraseña">
-    <input type="password" placeholder="Confirmar contraseña">
+    <input
+      type="text"
+      placeholder="Nombre completo"
+      [(ngModel)]="nombre">
+
+    <input
+      type="email"
+      placeholder="Correo electrónico"
+      [(ngModel)]="correo">
+
+    <input
+      type="text"
+      placeholder="Teléfono"
+      [(ngModel)]="telefono">
+
+    <input
+      type="password"
+      placeholder="Contraseña"
+      [(ngModel)]="contrasena">
+
+    <input
+      type="password"
+      placeholder="Confirmar contraseña"
+      [(ngModel)]="confirmarContrasena">
 
     <button (click)="registrar()">Registrarme</button>
+
     <p class="mensaje" *ngIf="mensaje">
-  {{ mensaje }}
-</p>
+      {{ mensaje }}
+    </p>
 
     <p>
-  ¿Ya tienes cuenta?
-  <a routerLink="/login">Inicia sesión</a>
-</p>
+      ¿Ya tienes cuenta?
+      <a routerLink="/login">Inicia sesión</a>
+    </p>
 
-<button routerLink="/inicio" class="btn-volver">
-  ← Volver al inicio
-</button>
-
-</div>
+    <button routerLink="/inicio" class="btn-volver">
+      ← Volver al inicio
+    </button>
+  </div>
 </section>
