@@ -56,31 +56,31 @@
 
     <h2>Datos de envío y pago 💳</h2>
 
-    <input type="text" placeholder="Nombre completo">
-    <input type="text" placeholder="Dirección de entrega">
+    <input type="text" placeholder="Nombre completo" [(ngModel)]="nombreCliente">
+    <input type="text" placeholder="Dirección de entrega" [(ngModel)]="direccion">
     <select [(ngModel)]="zonaEntrega">
     <option value="">Selecciona zona de entrega</option>
     <option value="chiapas">Dentro de Chiapas</option>
     <option value="mexico">Otro estado de México</option>
 </select>
-    <input type="text" placeholder="Teléfono">
+    <input type="text" placeholder="Teléfono" [(ngModel)]="telefono">
     <select [(ngModel)]="zonaEntrega">
     <option value="">Selecciona una zona</option>
     <option value="chiapas">Chiapas</option>
     <option value="mexico">Resto de México</option>
 </select>
 
-    <select>
-      <option>Tarjeta bancaria</option>
-      <option>Transferencia</option>
-      <option>Pago contra entrega</option>
-    </select>
+    <select [(ngModel)]="metodoPago">
+  <option>Tarjeta bancaria</option>
+  <option>Transferencia</option>
+  <option>Pago contra entrega</option>
+</select>
 
-    <input type="text" placeholder="Número de tarjeta">
-    <input type="text" placeholder="Fecha de vencimiento">
-    <input type="text" placeholder="CVV">
+    <input type="text" placeholder="Número de tarjeta" [(ngModel)]="numeroTarjeta">
+    <input type="text" placeholder="Fecha de vencimiento" [(ngModel)]="fechaVencimiento">
+    <input type="text" placeholder="CVV" [(ngModel)]="cvv">
 
-    <button class="btn-guardar" (click)="cerrarPago()">Guardar datos</button>
+    <button class="btn-guardar" (click)="guardarDatosPago()">Guardar datos</button>
 
   </div>
 </div>
