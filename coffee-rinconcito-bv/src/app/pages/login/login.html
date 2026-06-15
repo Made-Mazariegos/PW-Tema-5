@@ -6,29 +6,38 @@
     <h1>¡Bienvenido!</h1>
     <p>Inicia sesión para continuar</p>
 
-    <input type="email" placeholder="✉️ Correo electrónico">
-    <input type="password" placeholder="🔒 Contraseña">
+    <input 
+      type="email" 
+      placeholder="✉️ Correo electrónico"
+      [(ngModel)]="correo">
+
+    <input 
+      type="password" 
+      placeholder="🔒 Contraseña"
+      [(ngModel)]="contrasena">
 
     <a class="forgot" routerLink="/recuperar">¿Olvidaste tu contraseña?</a>
 
-    <button>Iniciar sesión</button>
+    <button (click)="iniciarSesion()">Iniciar sesión</button>
+
+    <p class="mensaje">{{ mensaje }}</p>
 
     <div class="linea">o continúa con</div>
 
-      <div class="social-login">
-  <button class="social-btn google-btn">
-    G <span>Google</span>
-  </button>
+    <div class="social-login">
+      <button class="social-btn google-btn">
+        G <span>Google</span>
+      </button>
 
-  <button class="social-btn facebook-btn">
-    f <span>Facebook</span>
-  </button>
-
+      <button class="social-btn facebook-btn">
+        f <span>Facebook</span>
+      </button>
     </div>
 
     <p>¿No tienes cuenta? <a routerLink="/registro">Regístrate aquí</a></p>
+    
     <button routerLink="/inicio" class="btn-volver">
-  ← Volver
-</button>
+      ← Volver
+    </button>
   </div>
 </section>

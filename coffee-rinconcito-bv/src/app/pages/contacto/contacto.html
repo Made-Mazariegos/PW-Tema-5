@@ -5,6 +5,10 @@
       Coffee Rinconcito BV es una plataforma que conecta a productores de café
       de Bella Vista con clientes que buscan café artesanal, fresco y de calidad.
     </p>
+
+    <button routerLink="/inicio" class="btn-volver">
+      ← Regresar al inicio
+    </button>
   </div>
 
   <div class="bloque contacto">
@@ -16,9 +20,24 @@
 
   <div class="bloque mensaje">
     <h1>Envíanos un mensaje</h1>
-    <input type="text" placeholder="Nombre">
-    <input type="email" placeholder="Correo electrónico">
-    <textarea placeholder="Mensaje"></textarea>
-    <button>Enviar mensaje</button>
+
+    <input 
+      type="text" 
+      placeholder="Nombre"
+      [(ngModel)]="nombre">
+
+    <input 
+      type="email" 
+      placeholder="Correo electrónico"
+      [(ngModel)]="correo">
+
+    <textarea 
+      placeholder="Mensaje"
+      [(ngModel)]="mensaje">
+    </textarea>
+
+    <button (click)="enviarMensaje()">Enviar mensaje</button>
+
+    <p class="aviso">{{ aviso }}</p>
   </div>
 </section>
